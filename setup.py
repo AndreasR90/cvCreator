@@ -11,10 +11,6 @@ with open(os.path.join(package, "__metadata__.py"), "r") as file:
 
 metadata = {mdk: eval("__" + mdk + "__") for mdk in metadata_keys}
 
-
 setup(
-    packages=find_packages(),
-    **metadata,
-    name="cvCreator",
-    entry_points={"console_scripts": ["bumpversion = bumpversion:main",]},
+    packages=find_packages(), **metadata, name="cvCreator",
 )
