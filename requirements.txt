@@ -1,3 +1,14 @@
-git+git://github.com/AndreasR90/py_html.git#egg=py_html
-git+git://github.com/AndreasR90/py_latex.git#egg=py_latex
-gunicorn
+attrs==18.2.0
+certifi==2020.12.5
+click==7.1.2
+Flask==1.1.2
+gunicorn==20.1.0
+itsdangerous==1.1.0
+Jinja2==2.11.3
+MarkupSafe==1.1.1
+pdflatex==0.1.3
+py-html @ git+git://github.com/AndreasR90/py_html.git@1f49cde3dc14b0a981d8bceac0cde8e75f9ce92c
+py-latex @ git+git://github.com/AndreasR90/py_latex.git@bba61432a9b2365c17c78308a0d6c7d66b394757
+waitress==2.0.0
+Werkzeug==1.0.1
+wincertstore==0.2
