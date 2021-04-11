@@ -1,2 +1,3 @@
 git+git://github.com/AndreasR90/py_html.git#egg=py_html
 git+git://github.com/AndreasR90/py_latex.git#egg=py_latex
+gunicorn
