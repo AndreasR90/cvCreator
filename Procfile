@@ -1,1 +1,1 @@
-web:guincorn --port=$PORT --chdir cvCreator run:app
+web:guincorn --port=$PORT cvCreator:app
