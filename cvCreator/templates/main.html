@@ -14,7 +14,6 @@
 </head>
 
 <body>
-
     {{ body | safe }}
     {{ latex | safe }}
 
@@ -30,6 +29,46 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function (event) {
+            var collapsibles = document.getElementsByClassName("CollapseHeader");
+            for (i = 0; i < collapsibles.length; i++) {
+                var storage_name = "collapse_" + $(collapsibles[i]).attr("href");
+                console.log(i + "   " + storage_name)
+                $(collapsibles[i]).click(function (e) {
+                    var storage_name = "collapse_" + $(this).attr("href");
+                    var clicked = localStorage.getItem(storage_name);
+                    console.log("clicked " + storage_name)
+                    if (clicked) {
+                        localStorage.removeItem(storage_name);
+                    } else {
+                        localStorage.setItem(storage_name, $(this).attr("href"));
+                    }
+                });
+                var item = localStorage.getItem(storage_name);
+                console.log("item : " + item);
+                if (item) {
+                    $(item).collapse("show");
+                }
+            }
+
+            var scrollpos = localStorage.getItem('scrollpos');
+            if (scrollpos) window.scrollTo(0, scrollpos);
+
+        });
+
+        window.onbeforeunload = function (e) {
+            localStorage.setItem('scrollpos', window.scrollY);
+        };
+        $(document).ready(function () {
+
+
+
+
+        })
+    </script>
+
+
 </body>
 
 </html>

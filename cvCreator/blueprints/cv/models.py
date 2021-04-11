@@ -915,14 +915,20 @@ class LatexDocument:
                         className="card-header",
                         children=[
                             html.a(
-                                className="card-link",
+                                className="card-link CollapseHeader",
                                 data_toggle="collapse",
+                                aria_controls=name,
                                 href=f"#{name}",
                                 children=name,
                             )
                         ],
                     ),
-                    html.div(className="collapse", id=name, children=[obj.to_html()],),
+                    html.div(
+                        className="collapse",
+                        aria_expanded="false",
+                        id=name,
+                        children=[obj.to_html()],
+                    ),
                 ],
             )
             html_string += htmlObj.__str__()

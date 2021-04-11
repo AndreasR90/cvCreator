@@ -1,3 +1,3 @@
-from . import app
+from cvCreator import app
 
-app.run()
+app.run(debug=True)

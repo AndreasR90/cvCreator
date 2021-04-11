@@ -2,7 +2,15 @@ import json
 
 import py_html.core as html
 import py_latex.core as latex
-from flask import Blueprint, Response, redirect, render_template, request, url_for
+from flask import (
+    Blueprint,
+    Response,
+    redirect,
+    render_template,
+    request,
+    session,
+    url_for,
+)
 from pdflatex import PDFLaTeX
 
 blueprint = Blueprint("blueprint", __name__)
